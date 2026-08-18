@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Naturel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: #444;
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        h1, h2, h3 {
+            font-family: "Playfair Display", serif;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 7%;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            letter-spacing: 4px;
+            color: #111;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #bd8d38;
+        }
+
+        .shop-btn {
+            background: #c79a45;
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 25px;
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            min-height: 500px;
+            background: #f6f1e9;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 12%;
+        }
+
+        .small-title {
+            color: #bd8d38;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 520px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .button {
+            display: inline-block;
+            width: fit-content;
+            background: #c79a45;
+            color: white;
+            padding: 11px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #a97b2e;
+        }
+
+        .hero-image {
+            background-image: url(
+                "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1400&q=85"
+            );
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* VALUES */
+        .values {
+            padding: 75px 7%;
+            text-align: center;
+        }
+
+        .values h2,
+        .team h2 {
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .value {
+            padding: 15px 25px;
+            border-right: 1px solid #eee;
+        }
+
+        .value:last-child {
+            border-right: none;
+        }
+
+        .icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            background: #f7f2eb;
+            color: #c79a45;
+            font-size: 28px;
+        }
+
+        .value h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .value p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* STORY */
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #f7f4ee;
+        }
+
+        .story-image {
+            min-height: 480px;
+            background-image: url(
+                "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=85"
+            );
+            background-size: cover;
+            background-position: center;
+        }
+
+        .story-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 70px 10%;
+        }
+
+        .story-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .story-content p {
+            margin-bottom: 18px;
+        }
+
+        /* TEAM */
+        .team {
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        .team-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 7px;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 19px;
+        }
+
+        .role {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .social a:hover {
+            color: #c79a45;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #17202d;
+            color: #c8cdd5;
+            padding: 60px 7% 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+            gap: 50px;
+        }
+
+        .footer-logo {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        footer h3 {
+            color: white;
+            font-family: "DM Sans", sans-serif;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #adb4bf;
+            max-width: 270px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 7px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: #c79a45;
+        }
+
+        .newsletter p {
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            width: 50px;
+            border: none;
+            background: #c79a45;
+            color: white;
+            cursor: pointer;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 45px auto 0;
+            padding-top: 18px;
+            border-top: 1px solid #343d49;
+            text-align: center;
+            font-size: 12px;
+            color: #9299a4;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 60px 8%;
+            }
+
+            .hero-image {
+                min-height: 400px;
+            }
+
+            .values-grid,
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .values-grid,
+            .team-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding: 25px;
+            }
+
+            .story-content {
+                padding: 55px 8%;
+            }
+
+            .team-member img {
+                height: 280px;
+            }
+
+            footer {
+                padding: 50px 8% 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <div class="logo">
+            ♧ NATUREL
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="shop-btn">Shop Now</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">ABOUT US</div>
+
+            <h1>
+                Crafted with passion,
+                inspired by nature
+            </h1>
+
+            <p>
+                At Naturel, we believe in the perfect harmony
+                between nature and innovation. Our products
+                are thoughtfully crafted using the finest
+                natural ingredients to bring quality and
+                beauty into your everyday life.
+            </p>
+
+            <a href="#story" class="button">
+                Learn More
+            </a>
+
+        </div>
+
+        <div class="hero-image"></div>
+
+    </section>
+
+
+    <!-- VALUES -->
+    <section class="values">
+
+        <div class="small-title">
+            WHAT WE STAND FOR
+        </div>
+
+        <h2>Our Values</h2>
+
+        <div class="values-grid">
+
+            <div class="value">
+                <div class="icon">🌿</div>
+                <h3>Natural Ingredients</h3>
+                <p>
+                    We use the finest natural ingredients
+                    that are safe, effective and sustainable.
+                </p>
+            </div>
+
+            <div class="value">
+                <div class="icon">⚗</div>
+                <h3>Science Backed</h3>
+                <p>
+                    Our products are developed with
+                    scientific research and tested for
+                    real results.
+                </p>
+            </div>
+
+            <div class="value">
+                <div class="icon">♡</div>
+                <h3>Cruelty Free</h3>
+                <p>
+                    We are committed to being 100%
+                    cruelty free and never test on animals.
+                </p>
+            </div>
+
+            <div class="value">
+                <div class="icon">◎</div>
+                <h3>Sustainable</h3>
+                <p>
+                    We care about the planet and use
+                    eco-friendly packaging and practices.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STORY -->
+    <section class="story" id="story">
+
+        <div class="story-image"></div>
+
+        <div class="story-content">
+
+            <div class="small-title">
+                OUR STORY
+            </div>
+
+            <h2>How It All Started</h2>
+
+            <p>
+                Naturel was born from a simple belief that
+                nature provides everything we need to live
+                beautifully.
+            </p>
+
+            <p>
+                What started as a small passion project has
+                grown into a brand dedicated to creating
+                natural, effective and ethical products
+                for everyone.
+            </p>
+
+            <p>
+                Every product we create is a reflection of
+                our promise to you — pure, honest and
+                inspired by nature.
+            </p>
+
+            <a href="#" class="button">
+                Read More
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEAM -->
+    <section class="team">
+
+        <div class="small-title">
+            OUR TEAM
+        </div>
+
+        <h2>Meet The Team</h2>
+
+        <div class="team-grid">
+
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=85"
+                     alt="Team member">
+                <h3>Emma Watson</h3>
+                <div class="role">Founder & CEO</div>
+
+                <div class="social">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+
+
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=85"
+                     alt="Team member">
+                <h3>Liam Carter</h3>
+                <div class="role">Product Developer</div>
+
+                <div class="social">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+
+
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&q=85"
+                     alt="Team member">
+                <h3>Olivia Bennett</h3>
+                <div class="role">Marketing Manager</div>
+
+                <div class="social">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+
+
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=85"
+                     alt="Team member">
+                <h3>Noah Mitchell</h3>
+                <div class="role">Sustainability Lead</div>
+
+                <div class="social">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">in</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="logo footer-logo">
+                    ♧ NATUREL
+                </div>
+
+                <p>
+                    Bringing the best of nature to you.
+                    Thank you for being part of our journey.
+                </p>
+            </div>
+
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h3>Customer Care</h3>
+
+                <ul class="footer-links">
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+
+            <div class="newsletter">
+
+                <h3>Newsletter</h3>
+
+                <p>
+                    Subscribe to get special offers,
+                    free giveaways, and special deals.
+                </p>
+
+                <form class="newsletter-form">
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <button type="submit">➤</button>
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 Naturel. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
